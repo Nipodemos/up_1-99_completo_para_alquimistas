@@ -6,14 +6,13 @@ automacro chegueilvl99 {
 	exclusive 1
 	ConfigKey estagio_Reborn none
 	ConfigKey prepararProReborn none
+	ConfigKeyNot In_saveMap_sequence true
 	run-once 1
 	macro_delay 2
 	call {
 		log peso atual = $.CharCurrentWeightLast
 		log peso percentual = $.CharCurrentWeightLastPercent
 		[
-		do conf dealAuto 3
-		do conf dealAuto_names $nomeMercador
 		do iconf Camisa de Algodão 0 1 0
 		do iconf Faca [3] 0 1 0
 		do conf getAuto_0 none
@@ -22,12 +21,12 @@ automacro chegueilvl99 {
 		do conf attackAuto -1
 		do conf route_randomWalk 0
 		do conf relogAfterStorage 0
-		do conf storageAuto 1
-		do conf storageAuto_npc yuno 152 187
-		do conf sellAuto 1
-		do conf sellAuto_npc yuno_in01 25 34
+		#do conf storageAuto 1
+		#do conf storageAuto_npc yuno 152 187
+		#do conf sellAuto 1
+		#do conf sellAuto_npc yuno_in01 25 34 
 		]
-		#deseequipando tudo
+		#desequipando tudo
 		desequipar("topHead")
 		desequipar("midHead")
 		desequipar("lowHead")
