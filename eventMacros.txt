@@ -1223,7 +1223,7 @@ automacro começarQuestPicky {
 		log =================================
 		log = Indo pegar quest para  Picks! =
 		log =================================
-		]]
+		]
 		pause 2
 		do talk $.NpcNearLastBinId
 		do talk resp 2
