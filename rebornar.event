@@ -1,14 +1,3 @@
-automacro chamarMercador {
-	ConfigKey prepararProReborn sim
-	exclusive 1
-	run-once 1
-	ConfigKey estagio_Reborn none
-	Zeny != 1285000
-	BaseLevel = 99
-	JobLevel = 50
-	priority -5 #prioridade alta
-}
- 
 automacro chegueilvl99 {
 	BaseLevel = 99
 	JobLevel = 50
