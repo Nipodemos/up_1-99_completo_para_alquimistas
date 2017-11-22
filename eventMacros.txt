@@ -2247,7 +2247,7 @@ automacro Eden60_JaJunteiOsItens {
 	InInventoryID 7196 >= 5 #Ombreira
 	InInventoryID 7100 >= 7 #Folha Afiada
 	QuestActive 7217
-    CurrentHP > 80%
+	CurrentHP > 80%
 	exclusive 1
 	call {
 		lock Eden60_JuntarItens
@@ -2256,6 +2256,7 @@ automacro Eden60_JaJunteiOsItens {
 		log = Vamos ao NPC! Já tenho os itens =
 		log ===================================
 		]
+		do conf attackAuto -1
 		call pararDeAtacar
 		do move um_fild01 &rand(36,38) &rand(277,279)
 		do talknpc 34 280 c #Romeo#2nd02
