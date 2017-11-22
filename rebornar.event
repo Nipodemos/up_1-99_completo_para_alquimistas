@@ -7,20 +7,6 @@ automacro chamarMercador {
 	BaseLevel = 99
 	JobLevel = 50
 	priority -5 #prioridade alta
-	call {
-	
-	
-		#AQUI VOCE COLOCA O NOME DO SEU MERCADOR!!!!
-		#NÃO ESQUEÇA SENÃO VAI DAR ERRADO
-		
-		$nomeMercador = INSIRA O NOME AQUI 
-		
-		#INSIRA AI EM CIMA O NOME DO SEU MERCADOR!!!!!!!!
-		#exemplo: $nomeMercador = nipodemos
-                #exemplo: $nomeMercador = sua mãe
-                #exemplo: $nomeMercador = i'm poppy
-		do pm "$nomeMercador" ajudaRebornar
-	}
 }
  
 automacro chegueilvl99 {
@@ -72,57 +58,6 @@ automacro chegueilvl99 {
 		log ============================
 		]
 		do conf -f prepararProReborn sim
-	}
-}
- 
-automacro irNoLocalPraNegociar {
-	BaseLevel = 99
-	JobLevel = 50
-	overrideAI 1
-	PlayerNotNear /$nomeMercador/
-	CharCurrentWeight = 0
-	ConfigKey estagio_Reborn none
-	Zeny != 1285000  #vamos ficar com o zeny certo
-	exclusive 1
-	macro_delay 2
-	run-once 1
-	ConfigKey saveMap yuno
-	call {
-		#movendo pra local especifico
-                if ($nomeMercador = /insira o nome/i ) {
-                    log VOCE ESQUECEU DE DEFINIR O NOME DO MERCADOR NA MACRO
-                    log INTERROMPENDO IMEDIATAMENTE
-                    log COLOQUE O NOME E TENTE NOVAMENTE
-                    do eval Misc::offlineMode();
-                    stop
-                } 
-		do pm "$nomeMercador" ajudaRebornar
-		do move yuno &rand(145,147) &rand(115,117)
-	}
-}
- 
-automacro DandoOuReceBendoZeny {
-	CharCurrentWeight 0
-	Zeny != 1285000
-	ConfigKey estagio_Reborn none
-	IsInMapAndCoordinate yuno 145..147 115..117 #lugar pra negociar
-	PlayerNear /$nomeMercador/ 
-	SimpleHookEvent engaged_deal
-	exclusive 1
-	call {
-		pause 3
-		$zenyPraDar = &eval($.zeny - 1285000)
-		if ( $zenyPraDar > 0) {
-			pause 2
-			#se o zeny atual for maior que 1285000, vc dá o excedente pro mercador
-			do deal add z $zenyPraDar
-			do pm "$nomeMercador" coloqueiozeny
-			pause 2
-			do deal
-		} else {
-			do pm "$nomeMercador" $.zeny
-			#se o zeny atual for menor que 1285000, vc manda pro mercador via pm quanto mais precisa
-		}
 	}
 }
  
