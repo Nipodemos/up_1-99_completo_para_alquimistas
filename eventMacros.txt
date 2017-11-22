@@ -374,7 +374,7 @@ automacro TalkSprakkiOutside {
 		do conf itemsTakeAuto 2
 		do conf itemsGatherAuto 2
 		do conf lockMap none
-		do conf attackAuto_inLockOnly 1
+		do conf attackAuto_inLockOnly 2
 		do conf route_randomWalk 0
 		do conf statsAddAuto 1
 		do conf statsAddAuto_list 10 dex, 15 agi, 20 dex, 25 agi, 20 str, 30 dex, 60 agi, 30 str, 40 dex, 20 vit, 80 agi ,60 dex, 50 str, 90 agi, 70 str, 40 vit
@@ -2664,10 +2664,14 @@ automacro definindoVariaveisDeUp {
 				$mapa{lockMap} = pay_fild09 #Salgueiro Ancião(Nv.34)/Besouro-Chifre(Nv.32)/Koko(Nv.38)
 				$mapa{city} = payon
 	    	}
-			case (= 64..99) {
+		case (= 64..89) {
 				$mapa{lockMap} = moc_fild17 #Hode(Nv.63)/Arenoso(Nv.61)/Frilldora(Nv.57)
 				$mapa{city} = morocc
-			}
+		}
+		case (= 90..99) {
+				$mapa{lockMap} = yuno_fild11 #Bode(Nv.80)/Planta Carnívora(Nv.73)
+				$mapa{city} = aldebaran
+		}
 			else {
 				[
 				log ==========================================================
