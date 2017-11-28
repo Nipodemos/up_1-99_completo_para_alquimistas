@@ -4396,11 +4396,11 @@ macro lhzpra {
 	switch ($.param[0]) {
 	    case (=~ /izlude/i) {
 			do conf -f aeroplano1 izlude
-			do conf -f aeroplano2 juno
+			do conf -f aeroplano2 yuno
 	    }
 	    case (=~ /rachel/i) {
 			do conf -f aeroplano1 rachel
-			do conf -f aeroplano2 juno
+			do conf -f aeroplano2 yuno
 	    }
 	    case (=~ /hugel/i) {
 			do conf -f aeroplano1 none
@@ -4416,7 +4416,7 @@ macro lhzpra {
 		}
 		case (=~ /[jy]uno/) {
 			do conf -f aeroplano1 none
-			do conf -f aeroplano2 juno
+			do conf -f aeroplano2 yuno
 		}
 		else {
 			[
