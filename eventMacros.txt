@@ -4289,11 +4289,11 @@ macro einbrochpra {
 	switch ($.param[0]) {
 		case (=~ /izlude/i) {
 			do conf -f aeroplano1 izlude
-			do conf -f aeroplano2 juno
+			do conf -f aeroplano2 yuno
 		}
 		case (=~ /rachel/i) {
 			do conf -f aeroplano1 rachel
-			do conf -f aeroplano2 juno
+			do conf -f aeroplano2 yuno
 		}
 		case (=~ /hugel/i) {
 			do conf -f aeroplano1 none
@@ -4310,7 +4310,7 @@ macro einbrochpra {
 		}
 		case (=~ /[jy]uno/) {
 			do conf -f aeroplano1 none
-			do conf -f aeroplano2 juno
+			do conf -f aeroplano2 yuno
 		}
 		else {
 			[
@@ -4350,19 +4350,19 @@ macro rachelpra {
 			stop
 	    }
 	    case (=~ /hugel/i) {
-			do conf -f aeroplano1 juno
+			do conf -f aeroplano1 yuno
 			do conf -f aeroplano2 hugel
 	    }
 		case (=~ /lighthalzen/i) {
-			do conf -f aeroplano1 juno
+			do conf -f aeroplano1 yuno
 			do conf -f aeroplano2 lighthalzen
 		}
 		case (=~ /einbroch/i) {
-			do conf -f aeroplano1 juno
+			do conf -f aeroplano1 yuno
 			do conf -f aeroplano2 einbroch
 		}
 		case (=~ /[jy]uno/) {
-			do conf -f aeroplano1 juno
+			do conf -f aeroplano1 yuno
 			do conf -f aeroplano2 none
 		}
 		else {
@@ -4390,7 +4390,7 @@ macro rachelpra {
 
 macro lhzpra {
 	log Vamos ir de lighthalzen para $.param[0]
-	#se a cidade for hugel, juno, einbroch  ele só pega 1 aeroplano
+	#se a cidade for hugel, yuno, einbroch  ele só pega 1 aeroplano
 	# se for outra cidade, ele pega os dois aeroplanos
 	 
 	switch ($.param[0]) {
