@@ -4472,6 +4472,7 @@ automacro dentroDoAeroplanoInternacional_checagem {
 		if (&defined($varAeroplano1) = 0) {
 			$varAeroplano1 = &config(aeroplano1)
 		}
+		if ($varAeroplano1 = yuno) $varAeroplano1 = juno
 		log Estamos no aeroplano, aguardando chegada ao destino
 	}
 }
@@ -4493,6 +4494,7 @@ automacro dentroDoAeroplanoDomestico_checagem {
 		if (&defined($varAeroplano2) = 0) {
 			$varAeroplano2 = &config(aeroplano2)
 		}
+			if ($varAeroplano2 = yuno) $varAeroplano2 = juno
 		log Estamos no aeroplano, aguardando chegada ao destino
 	}
 }
@@ -4506,6 +4508,8 @@ automacro dentroDoAeroplanoDomestico {
 }
 
 macro sairDoAeroplano {
+	if ($varAeroplano1 = juno) $varAeroplano1 = yuno
+	if ($varAeroplano2 = juno) $varAeroplano2 = yuno
 	do move 243 74
 }
 
